@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const { parse } = require('url');
+const { IncomingMessage, ServerResponse } = require('http');
 
 require('dotenv').config();
 
@@ -34,6 +36,7 @@ const exercisesRouter = require('./routes/exercises');
 app.use('/users', usersRouter);
 app.use('/exercises', exercisesRouter);
 
-app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
-});
+module.exports = (req, res) => {
+  const url = parse(req.url).pathname;
+  app(req, res);
+}
