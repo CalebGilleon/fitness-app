@@ -1,0 +1,19 @@
+.sad-face-container {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.sad-face {
+    position: relative;
+    color: white;
+    background-image: url(../../public/sadface.png);
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+}
+
+.not-found-message {
+    text-align: center;
+    font-size: 30px;
+}
